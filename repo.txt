@@ -1,0 +1,81 @@
+///////fibonacci series////////////////////////////////////////////////////////////////
+pyans@LAPTOP-FLDB39TA ~
+$ cat>fibo1.sh
+# Print Fibonacci series using recursion
+
+[1]+  Stopped                 cat > fibo1.sh
+
+pyans@LAPTOP-FLDB39TA ~
+$ cat>fibo1.sh
+
+
+
+fibonacci() {
+    if [ $1 -le 1 ]; then
+        echo $1
+    else
+        a=$(($1 - 1))
+        b=$(($1 - 2))
+        echo $(( $(fibonacci $a) + $(fibonacci $b) ))
+    fi
+}
+
+
+echo -n "Enter the length of Fibonacci series: "
+read length
+
+
+echo "Fibonacci series:"
+for ((i = 0; i < length; i++)); do
+    result=$(fibonacci $i)
+    echo -n "$result "
+done
+
+echo
+
+[2]+  Stopped                 cat > fibo1.sh
+
+pyans@LAPTOP-FLDB39TA ~
+$ chmod +x fibo1.sh
+
+pyans@LAPTOP-FLDB39TA ~
+$ ./fibo1.sh
+Enter the length of Fibonacci series: 6
+Fibonacci series:
+0 1 1 2 3 5
+
+
+////////////////////pattern problem/////////////////////////////////////
+
+pyans@LAPTOP-FLDB39TA ~
+$ cat>pattern.sh
+
+
+
+echo -n "Enter the number of rows: "
+read rows
+
+
+for ((i = 1; i <= rows; i++)); do
+    for ((j = i; j >= 1; j--)); do
+        echo -n "$j "
+    done
+    echo
+done
+
+[1]+  Stopped                 cat > pattern.sh
+
+pyans@LAPTOP-FLDB39TA ~
+$ chmod +x pattern.sh
+
+pyans@LAPTOP-FLDB39TA ~
+$ ./pattern.sh
+Enter the number of rows: 6
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+6 5 4 3 2 1
+
+
